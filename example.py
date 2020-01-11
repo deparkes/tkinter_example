@@ -1,4 +1,5 @@
 import tkinter
+from tkinter import messagebox
 import os
 
 window = tkinter.Tk()
@@ -46,6 +47,9 @@ def create_subwindow1():
 
     buttonCommit.pack(anchor='center')
 
+    btn2 = tkinter.Button(sub_window, text="Functionality 2", command=lambda: messagebox.showinfo("Info","Not Yet Implemented"))
+    btn2.pack(anchor='center')
+
 
 
 def create_subwindow2():
@@ -68,7 +72,7 @@ window.config(menu=menubar)
 btn = tkinter.Button(window, text="Subprocess 1", command=create_subwindow1)
 btn.pack(anchor='center')
 
-btn2 = tkinter.Button(window, text="Subprocess 2", command=create_subwindow2)
+btn2 = tkinter.Button(window, text="Subprocess 2", command=lambda: tkinter.messagebox.showwarning("Warning","Warning message"))
 btn2.pack(anchor='center')
 
 
