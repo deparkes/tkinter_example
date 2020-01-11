@@ -1,4 +1,5 @@
 import tkinter
+import os
 
 window = tkinter.Tk()
 
@@ -18,13 +19,34 @@ def create_about():
     btn.pack(anchor='center')
 
 def create_subwindow1():
+    def retrieve_input():
+        entryText = entry.get()
+
+        if os.path.exists(entryText):
+            lbl2.config(text='A file')
+        else:
+            lbl2.config(text='Not a file')
+
     sub_window = tkinter.Toplevel(window)
     sub_window.title('Subprocess 1')
     lbl = tkinter.Label(sub_window, text="Subprocess 1")
     lbl.config(anchor=tkinter.CENTER)
     lbl.pack(anchor='center')
-    btn = tkinter.Button(sub_window, text="OK", command=sub_window.destroy)
+    btn = tkinter.Button(sub_window, text="Close", command=sub_window.destroy)
     btn.pack(anchor='center')
+
+    lbl2 = tkinter.Label(sub_window, text="")
+    lbl2.pack(anchor='center')
+
+    entry = tkinter.Entry(sub_window)
+    entry.pack(anchor='center')
+
+    buttonCommit=tkinter.Button(sub_window, text="Check path exists",
+                                command=retrieve_input)
+
+    buttonCommit.pack(anchor='center')
+
+
 
 def create_subwindow2():
     sub_window = tkinter.Toplevel(window)
