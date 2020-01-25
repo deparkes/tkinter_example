@@ -29,8 +29,8 @@ def create_subwindow1():
             lbl2.config(text='Not a file')
 
     sub_window = tkinter.Toplevel(window)
-    sub_window.title('Subprocess 1')
-    lbl = tkinter.Label(sub_window, text="Subprocess 1")
+    sub_window.title('Sub-window 1')
+    lbl = tkinter.Label(sub_window, text="Sub-window 1")
     lbl.config(anchor=tkinter.CENTER)
     lbl.pack(anchor='center')
     btn = tkinter.Button(sub_window, text="Close", command=sub_window.destroy)
@@ -54,8 +54,8 @@ def create_subwindow1():
 
 def create_subwindow2():
     sub_window = tkinter.Toplevel(window)
-    sub_window.title('Subprocess 2')
-    lbl = tkinter.Label(sub_window, text="Subprocess 2")
+    sub_window.title('Subwindow 2')
+    lbl = tkinter.Label(sub_window, text="Sub-window 2")
     lbl.config(anchor=tkinter.CENTER)
     lbl.pack(anchor='center')
     btn = tkinter.Button(sub_window, text="OK", command=sub_window.destroy)
@@ -69,10 +69,10 @@ helpmenu.add_command(label="About", command=create_about)
 # display the menu
 window.config(menu=menubar)
 
-btn = tkinter.Button(window, text="Subprocess 1", command=create_subwindow1)
+btn = tkinter.Button(window, text="Sub-window 1", command=create_subwindow1)
 btn.pack(anchor='center')
 
-btn2 = tkinter.Button(window, text="Subprocess 2", command=lambda: tkinter.messagebox.showwarning("Warning","Warning message"))
+btn2 = tkinter.Button(window, text="Sub-window 2", command=lambda: tkinter.messagebox.showwarning("Warning","Warning message"))
 btn2.pack(anchor='center')
 
 
